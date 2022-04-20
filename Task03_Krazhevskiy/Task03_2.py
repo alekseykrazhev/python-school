@@ -26,5 +26,5 @@ def reverse_word(word):
 if __name__ == '__main__':
     line = str(input("Enter a line:"))
     
-    print(reverse_line(line))
+    print(f"Line with reversed words: {reverse_line(line)}")
     
