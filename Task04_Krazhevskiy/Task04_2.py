@@ -15,6 +15,13 @@ def most_frequent_word(filename):
     if not new_words:
         return
 
+    marks = ',.!?:;-()[]'
+    for c in marks:
+        for word in new_words:
+            for char in word:
+                if char in marks:
+                    new_words[new_words.index(word)] = word.replace(char, '')
+
     max_count = 0
     max_word = ''
     for word in new_words:

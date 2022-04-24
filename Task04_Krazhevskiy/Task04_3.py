@@ -20,6 +20,17 @@ def same_words_in_files(filename1: str, filename2: str) -> list:
     new_words1 = [word.lower() for word in words1]
     new_words2 = [word.lower() for word in words2]
 
+    marks = ',.!?:;-()[]'
+    for c in marks:
+        for word in new_words1:
+            for char in word:
+                if char in marks:
+                    new_words1[new_words1.index(word)] = word.replace(char, '')
+        for word in new_words2:
+            for char in word:
+                if char in marks:
+                    new_words2[new_words2.index(word)] = word.replace(char, '')
+
     same_words = []
     for word in new_words1:
         if word in new_words2:
