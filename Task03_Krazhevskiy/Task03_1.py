@@ -4,7 +4,7 @@ def decimal_to_any(number : float, base : int):
     sign = ''
     if number[0] == '-':
         sign = '-'
-        del number[0]
+        #del number[0]
 
     if number == '0':
         return '0'
@@ -13,7 +13,7 @@ def decimal_to_any(number : float, base : int):
     ans = ''
 
     before = int(before)
-    while before > base:
+    while before >= base:
         if before % base < 10:
             ans += str(before % base)
         else:
@@ -26,7 +26,7 @@ def decimal_to_any(number : float, base : int):
 
     count = 0
     after = float('0.' + after)
-    while str(after).split('.')[1] != '0' and count < 15:
+    while str(after).split('.')[1] != '0' and count < 20:
         count += 1
         after = '0.' + str(after).split('.')[1]
         after = float(after)
@@ -38,10 +38,16 @@ def decimal_to_any(number : float, base : int):
         else:
             ans += chr(int(int_part) + 55)
 
+    if count < 1:
+        ans += '0'
+
     return ans
 
     
 def any_to_decimal(number, base : int):
+    if '.' not in number:
+        number += '.0'
+
     if base == 10:
         return number
 
