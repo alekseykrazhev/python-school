@@ -33,7 +33,7 @@ def k_min(arr: list, k: int) -> int:
     elif len(arr) < 1:
         raise IndexError("[Exception] Array is empty")
 
-    if not all(isinstance(i, int) or isinstance(i, float)for i in arr) and not all(isinstance(i, str) for i in arr):
+    if not all(isinstance(i, int) or isinstance(i, float) for i in arr) and not all(isinstance(i, str) for i in arr):
         raise TypeError(
             "[Exception] Type of elements in the array is not the same")
 
