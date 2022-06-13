@@ -1,2 +1,2 @@
 # python-school
-Python Courses by ISSoft
+Python Courses by ISSoft - Finished
